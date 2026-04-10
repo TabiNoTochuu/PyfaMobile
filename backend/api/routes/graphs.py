@@ -43,7 +43,7 @@ async def dps_vs_range(
     fit_ids = _parse_ids(fitIDs)
 
     def _compute():
-        from graphs.graph import FitGraph
+        from graphs.data.base.graph import FitGraph
         results = {}
         for fit_id in fit_ids:
             try:
@@ -72,7 +72,7 @@ async def dps_vs_time(
     fit_ids = _parse_ids(fitIDs)
 
     def _compute():
-        from graphs.graph import FitGraph
+        from graphs.data.base.graph import FitGraph
         results = {}
         for fit_id in fit_ids:
             try:
@@ -98,7 +98,7 @@ async def ehp_vs_speed(fitIDs: str):
     fit_ids = _parse_ids(fitIDs)
 
     def _compute():
-        from graphs.graph import FitGraph
+        from graphs.data.base.graph import FitGraph
         results = {}
         for fit_id in fit_ids:
             try:

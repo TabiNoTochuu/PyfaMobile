@@ -34,6 +34,11 @@ def _bootstrap():
         if p not in sys.path:
             sys.path.insert(0, p)
 
+    # Install the wx stub BEFORE any service/ import so that files which do
+    # `import wx` or `_t = wx.GetTranslation` at module level don't fail.
+    from backend.wx_stub import install as _install_wx_stub
+    _install_wx_stub()
+
     import config
     config.defPaths()
     config.defLogging()
